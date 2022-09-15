@@ -1,5 +1,22 @@
 # iwamasa-2022
 
+```
+├─ data
+│  ├─ interm
+│  │  ├─ non-treated-dataset
+│  │  └─ skeleton-non-treated-dataset
+│  ├─ processed
+│  │  ├─ segment-non-treated-dataset
+│  │  └─ network-non-treated-dataset
+│  └─ raw
+├─ models
+└─ notebooks
+   ├─ extract_network-features.ipynb
+   ├─ extract_network.ipynb
+   ├─ segment_non-treated-leaf.ipynb
+   └─ skeletonization.ipynb
+```
+
 
 ## License
 
