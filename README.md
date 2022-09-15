@@ -17,6 +17,16 @@
    └─ skeletonization.ipynb
 ```
 
+## description
+
+* segment_non-treated-leaf.ipynb
+    * To segment leaf vein images
+* skeletonization.ipynb
+    * To convert the segmented vein images into skeleton images of 1 pixel width
+* extract_network.ipynb
+    * To extract the vein networks from the skealton images
+* extract_network-features.ipynb
+    * To extract features from the vein networks
 
 ## License
 
