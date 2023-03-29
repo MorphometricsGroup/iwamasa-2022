@@ -1,16 +1,23 @@
-version: '2.3'
+version: "3.8"
+
 services:
-  app:
+  core:
     runtime: nvidia
-    build: .
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=all
-    volumes:
-      - ./:/tmp/working
-    working_dir: /tmp/working
-    ports: 
-      - "8888:8888"
-    command: >
-      jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+    build:
+      args:
+        - PROJECT_NAME=phenotyping-topological-leaf-vein
+        - USER_NAME=kiwamasa
+        - GROUP_NAME=MS
+        - BASE_IMAGE=nvidia/cuda:11.0.3-devel-ubuntu20.04
+        - PYTHON_VERSION=3.8
+        - UID=${HOST_UID-1000}
+        - GID=${HOST_GID-1000}
+      context: ./
+      dockerfile: ./Dockerfile
     tty: true
+    volumes:
+        - ./:/home/kiwamasa/phenotyping-topological-leaf-vein
+    ports:
+        - 8000:8000
