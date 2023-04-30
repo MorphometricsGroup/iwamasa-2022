@@ -1,16 +1,12 @@
-version: '2.3'
+version: '3.8'
 services:
-  app:
+  workspace:
     runtime: nvidia
-    build: .
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=all
+    build: .
     volumes:
-      - ./:/tmp/working
-    working_dir: /tmp/working
+      - ./:/workspace
     ports: 
-      - "8888:8888"
-    command: >
-      jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+      - "8000:8000"
     tty: true
