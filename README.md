@@ -10,11 +10,24 @@
 │  │  └─ network-non-treated-dataset
 │  └─ raw
 ├─ models
-└─ notebooks
-   ├─ extract_network-features.ipynb
-   ├─ extract_network.ipynb
-   ├─ segment_non-treated-leaf.ipynb
-   └─ skeletonization.ipynb
+├─ notebooks
+│  ├─ extract_network-features.ipynb
+│  ├─ extract_network.ipynb
+│  ├─ segment_non-treated-leaf.ipynb
+│  └─ skeletonization.ipynb
+├─ Dockerfile
+├─ docker-compose.yml
+├─ pyproject.toml
+├─ poetry.lock
+└─ README.md
+```
+
+## Installation
+
+```shell
+docker compose up -d
+docker compose exec workspace bash
+poetry install
 ```
 
 ## description
